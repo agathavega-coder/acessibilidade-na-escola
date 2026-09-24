@@ -1,0 +1,134 @@
+/* Reseta estilos básicos e define tipografia global */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif; /* Prática: Fonte legível sem serifa */
+  background-color: #f4f6f8; /* Prática: Poucas cores e fundo neutro */
+  color: #1a1a1a; /* Prática: Alto contraste com o fundo */
+  line-height: 1.6;
+  padding: 20px;
+}
+
+/* Cabeçalho */
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #0d3b66;
+  margin-bottom: 8px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #4a5568;
+}
+
+/* Container de Cards (Grid Flexível/Responsivo) */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 colunas no computador */
+  gap: 20px; /* Espaçamento interno entre elementos */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* Estilização individual dos Cards */
+.card {
+  background-color: #ffffff;
+  border: 2px solid #e2e8f0; /* Borda leve para delimitação */
+  border-radius: 12px; /* Cantos arredondados */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.card-header .emoji {
+  font-size: 1.8rem;
+}
+
+.card-header h2 {
+  font-size: 1.3rem;
+  color: #0d3b66;
+}
+
+.card p {
+  color: #2d3748;
+  margin-bottom: 16px;
+  font-size: 0.95rem;
+}
+
+.info-objetiva {
+  display: inline-block;
+  background-color: #eef2f7;
+  color: #0d3b66;
+  font-weight: bold;
+  font-size: 0.85rem;
+  padding: 8px 12px;
+  border-radius: 6px;
+  margin-top: auto;
+}
+
+/* Botão de Chamada para Ação (CTA) */
+.cta-container {
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.btn-saiba-mais {
+  display: inline-block;
+  background-color: #0d3b66; /* Cor escura para alto contraste */
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 14px 28px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.btn-saiba-mais:hover, 
+.btn-saiba-mais:focus {
+  background-color: #092543;
+  border-color: #ffffff;
+  outline: 3px solid #0d3b66; /* Destaque visual ao focar pelo teclado */
+}
+
+/* Responsividade (Media Query para celulares) */
+@media (max-width: 768px) {
+  .cards-container {
+    grid-template-columns: 1fr; /* Um card abaixo do outro no celular */
+  }
+
+  header h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn-saiba-mais {
+    width: 100%; /* Botão ocupa a largura da tela em dispositivos móveis */
+    text-align: center;
+  }
+}
